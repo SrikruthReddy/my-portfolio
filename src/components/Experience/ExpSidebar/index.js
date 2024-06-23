@@ -22,7 +22,7 @@ const StyledHighlight = styled.div`
   background: #ffd700;
   z-index: 10;
   transform: translateY(
-    calc(${({ activeTabId }) => tabMap[activeTabId]} * 52px)
+    calc(${({ activetabid }) => tabMap[activetabid]} * 52px)
   );
   transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition-delay: 0.1s;
@@ -48,7 +48,7 @@ export default function ExpSidebar({ onJobClick, currentJob }) {
           })}
         </ul>
       </div>
-      <StyledHighlight activeTabId={currentJob} />
+      <StyledHighlight activetabid={currentJob} />
     </div>
   );
 }

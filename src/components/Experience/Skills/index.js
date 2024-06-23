@@ -5,48 +5,41 @@ import { SKILLS_DATA } from '../../../data';
 
 const SkillsSphere = () => {
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://www.goat1000.com/tagcanvas.min.js';
-    script.async = true;
-    script.onload = () => {
+    // Initialize TagCanvas
+    if (window.TagCanvas) {
       try {
-        window.TagCanvas.Start('myCanvas', 'tags', {
-          textColour: '#ffffff',
-          outlineColour: '#ffffff',
+        window.TagCanvas.Start('myCanvas', 'skills-list', {
+          textColour: '#fff',
+          outlineColour: '#0000',
           reverse: true,
           depth: 0.8,
           maxSpeed: 0.05,
-          initial: [0.1, 0.1], // Start with a slight rotation
-          wheelZoom: false, // Disable zoom on mouse wheel
+          initial: [0.1, -0.1],
+          wheelZoom: true,
+          noSelect: true,
+          pinchZoom: true,
         });
       } catch (e) {
-        document.getElementById('myCanvasContainer').style.display = 'none';
+        console.error('Canvas error:', e);
       }
-    };
-
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    };
+    }
   }, []);
 
   return (
-    <div id="myCanvasContainer">
-      <canvas width="600" height="600" id="myCanvas">
-        <p>
-          Anything in here will be replaced on browsers that support the canvas
-          element
-        </p>
-      </canvas>
-      <ul id="tags">
-        {SKILLS_DATA.map((skill, index) => (
-          <li key={index}>
-            <a href="#">{skill}</a>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <>
+      <div id="myCanvasContainer">
+        <canvas width="600" height="600" id="myCanvas"></canvas>
+      </div>
+      <div id="skills-list" style={{ display: 'none' }}>
+        <ul>
+          {SKILLS_DATA.map((skill, index) => (
+            <li key={index}>
+              <a href="#!">{skill}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
   );
 };
 
