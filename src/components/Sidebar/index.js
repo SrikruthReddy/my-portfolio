@@ -7,8 +7,8 @@ import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import {
   faHome,
   faUser,
-  faEnvelope,
   faSuitcase,
+  faEnvelope,
   faBars,
   faClose,
 } from '@fortawesome/free-solid-svg-icons';
@@ -36,6 +36,14 @@ export default function Sidebar() {
         <NavLink
           exact="true"
           activeclassname="active"
+          className="experience-link"
+          to="/experience"
+        >
+          <FontAwesomeIcon icon={faSuitcase} color="#4d4d4e"></FontAwesomeIcon>
+        </NavLink>
+        <NavLink
+          exact="true"
+          activeclassname="active"
           className="contact-link"
           to="/contact"
         >
@@ -46,7 +54,7 @@ export default function Sidebar() {
         <li>
           <a
             target="_blank"
-            rel="nonreferrer"
+            rel="noreferrer"
             href="https://www.linkedin.com/in/srikruth-reddy-puram/"
           >
             <FontAwesomeIcon
@@ -58,7 +66,7 @@ export default function Sidebar() {
         <li>
           <a
             target="_blank"
-            rel="nonreferrer"
+            rel="noreferrer"
             href="https://github.com/SrikruthReddy"
           >
             <FontAwesomeIcon icon={faGithub} color="#4d4d4e"></FontAwesomeIcon>

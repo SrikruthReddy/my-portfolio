@@ -19,6 +19,21 @@
   }
 }
 
+.text-animate-exp {
+  display: inline-block;
+  opacity: 0;
+  animation: bounceIn;
+  animation-duration: 1s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  min-width: 10px;
+}
+@for $i from 1 through 33 {
+  .text-animate-exp._#{$i} {
+    animation-delay: #{$i / 10}s;
+  }
+}
+
 @for $i from 1 through 33 {
   @if $i != 22 {
     .text-animate._#{$i} {

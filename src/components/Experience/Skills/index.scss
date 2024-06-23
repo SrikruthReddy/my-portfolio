@@ -1,0 +1,24 @@
+// index.scss
+body {
+  font-family: 'Coolvetica', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  margin: 0;
+}
+
+#myCanvasContainer {
+  width: 600px;
+  height: 600px;
+}
+
+#myCanvas {
+  width: 100%;
+  height: 100%;
+}
+
+ul {
+  display: none;
+}

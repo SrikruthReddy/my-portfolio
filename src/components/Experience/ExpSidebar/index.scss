@@ -1,0 +1,42 @@
+.sidebar-container {
+  display: flex; /* Use flexbox to make children side by side */
+  align-items: flex-start; /* Align items to the start of flex container */
+  width: 30%; /* Sidebar width */
+  background-color: transparent; /* Background color for sidebar */
+  padding: 20px;
+  color: #fff;
+
+  .buttons-container {
+    flex: 1; /* Take remaining space */
+    ul {
+      list-style-type: none;
+      margin-top: 0;
+      padding: 0;
+    }
+
+    button {
+      position: relative;
+      width: 100%;
+      padding: 0 20px 2px;
+      height: 52px;
+      background-color: transparent;
+      color: #9eb3c7;
+      font-family: monospace, 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+      border: none;
+      border-left: 2px solid #777777;
+      cursor: pointer;
+      text-align: left;
+      white-space: nowrap;
+
+      &:hover {
+        background-color: #033d54;
+        color: #ffe066;
+      }
+
+      &.highlighted {
+        color: #ffd700;
+        background-color: #034f6b;
+      }
+    }
+  }
+}

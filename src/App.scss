@@ -28,6 +28,13 @@ $primary-color: #ffd700;
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Mono';
+  src:
+    url('./assets/fonts/SFMono-Medium.ttf') format('ttf'),
+    url('./assets/fonts/SFMono-Regular.ttf') format('ttf');
+}
+
 input,
 textarea {
   font-family: 'Helvetica Neue', sans-serif;

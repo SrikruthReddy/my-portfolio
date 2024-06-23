@@ -51,10 +51,9 @@ const About = () => {
           </p>
           <p align="LEFT">
             I excel in collaborative environments and have hands-on experience
-            with Agile, Git, AWS CodeCommit, and Jenkins. My Master's in
-            Computer Science from the University of Florida and my role as a
-            Graduate Student Assistant have further honed technical and teaching
-            skills.
+            with Agile, Git, AWS, and Jenkins. My Master's in Computer Science
+            from the University of Florida and my role as a Graduate Student
+            Assistant have further honed technical and teaching skills.
           </p>
           <p>
             Outside of work, I'm a dedicated family person who enjoys sports,

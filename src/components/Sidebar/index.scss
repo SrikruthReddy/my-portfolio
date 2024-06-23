@@ -54,7 +54,7 @@
       }
       &:after {
         content: '';
-        font-size: 13px;
+        font-size: 11.5px;
         letter-spacing: 2px;
         position: absolute;
         bottom: 0;
@@ -79,6 +79,11 @@
     a.contact-link {
       &::after {
         content: 'CONTACT';
+      }
+    }
+    a.experience-link {
+      &::after {
+        content: 'EXPERIENCE';
       }
     }
     a.active {
