@@ -3,6 +3,8 @@
   height: 350px;
   position: relative;
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  display: flex;
+  flex-direction: column;
   &:hover,
   &:focus-within {
     .project-card-inner {
@@ -14,14 +16,111 @@
     z-index: 1;
   }
   .project-card-inner {
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: space-between;
     position: relative;
     height: 100%;
-    padding: 2rem 1.75rem;
+    padding: 2.75rem 2.5rem;
     background-color: #0b3a54;
     border-radius: 4px;
     transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-    overflow: auto;
+    flex-grow: 1;
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+  }
+  .project-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    .folder {
+      font-size: 27px;
+      color: #ffd700;
+    }
+    .project-links {
+      display: flex;
+      align-items: center;
+      color: #a8b2d1;
+      font-size: 23px;
+      .a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px 7px;
+      }
+    }
+  }
+  .project-title {
+    width: 100%;
+    text-align: left;
+    color: #ccd6f6;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 10px;
+    top: 0;
+    left: 0;
+    font-family:
+      'Calibre',
+      'Inter',
+      'San Francisco',
+      'SF Pro Text',
+      -apple-system,
+      system-ui,
+      sans-serif;
+    a {
+      color: inherit;
+      text-decoration: none;
+      &:hover,
+      &:focus {
+        text-decoration: none;
+      }
+    }
+  }
+  .project-description {
+    color: #f0f4ff;
+    font-family:
+      'Calibre',
+      'Inter',
+      'San Francisco',
+      'SF Pro Text',
+      -apple-system,
+      system-ui,
+      sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    a {
+      color: inherit;
+      text-decoration: none;
+      &:hover,
+      &:focus {
+        text-decoration: none;
+      }
+    }
+  }
+  .project-tech-list {
+    display: flex;
+    align-items: flex-end;
+    flex-grow: 0;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 20px 0 0 0;
+    list-style: none;
+    width: 100%;
+    li {
+      font-family: monospace;
+      font-size: 12px;
+      line-height: 1.75;
+      &:not(:last-of-type) {
+        margin-right: 15px;
+      }
+    }
   }
 }

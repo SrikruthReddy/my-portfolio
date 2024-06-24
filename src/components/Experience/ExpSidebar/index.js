@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import './index.scss';
 import styled from 'styled-components';
 const jobMapping = {
@@ -29,6 +30,12 @@ const StyledHighlight = styled.div`
 `;
 
 export default function ExpSidebar({ onJobClick, currentJob }) {
+  const [hasClicked, setHasClicked] = useState(false);
+
+  const handleClick = (jobKey) => {
+    setHasClicked(true);
+    onJobClick(jobKey);
+  };
   return (
     <div className="sidebar-container">
       <div className="buttons-container">
@@ -38,8 +45,14 @@ export default function ExpSidebar({ onJobClick, currentJob }) {
             return (
               <li key={jobKey}>
                 <button
-                  className={jobKey === currentJob ? 'highlighted' : ''}
-                  onClick={() => onJobClick(jobKey)}
+                  className={
+                    jobKey === currentJob && hasClicked
+                      ? 'highlighted'
+                      : jobKey === currentJob
+                        ? 'text-highlighted'
+                        : ''
+                  }
+                  onClick={() => handleClick(jobKey)}
                 >
                   {jobName}
                 </button>

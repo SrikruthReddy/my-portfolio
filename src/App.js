@@ -4,6 +4,7 @@ import Layout from './components/Layout';
 import Home from './components/Home';
 import About from './components/About';
 import Experience from './components/Experience';
+import Projects from './components/Projects';
 import './App.scss';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           <Route index element={<Home />}></Route>
           <Route path="about" element={<About />} />
           <Route path="experience" element={<Experience />} />
+          <Route path="projects" element={<Projects />} />
         </Route>
       </Routes>
     </>

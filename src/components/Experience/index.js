@@ -101,6 +101,7 @@ export default function Experience() {
           </div>
         </div>
       </div>
+      <Loader type="pacman" />
     </>
   );
 }

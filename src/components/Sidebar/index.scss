@@ -4,7 +4,7 @@
   background: #181818;
   width: 5%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   z-index: 3;
   min-height: 500px;
@@ -86,6 +86,11 @@
         content: 'EXPERIENCE';
       }
     }
+    a.projects-link {
+      &::after {
+        content: 'PROJECTS';
+      }
+    }
     a.active {
       svg {
         color: #ffd700;
@@ -113,3 +118,4 @@
     }
   }
 }
+/* Add these styles to your index.scss or a relevant CSS/SCSS file */

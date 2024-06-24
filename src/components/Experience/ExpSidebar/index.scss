@@ -32,7 +32,9 @@
         background-color: #033d54;
         color: #ffe066;
       }
-
+      &.text-highlighted {
+        color: #ffd700;
+      }
       &.highlighted {
         color: #ffd700;
         background-color: #034f6b;

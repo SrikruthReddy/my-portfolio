@@ -62,3 +62,27 @@ export const SKILLS_DATA = [
   'Kubernetes',
   'AWS',
 ];
+export const PROJECT_DATA = [
+  {
+    title: 'MentalHealthDB ',
+    description:
+      'Full-Stack app visualizing global mental health trends by curating datasets, implementing ETL process, and building Angular UI integrated with OracleDB using Node and Express.',
+    stack: ['Angular', 'Typescript', 'Firebase', 'Oracle'],
+    github: 'https://github.com/SrikruthReddy/MentalHealthDB',
+    link: 'https://mentalhealthdb.web.app/',
+  },
+  {
+    title: 'GatorTaxi',
+    description:
+      'GatorTaxi employs min-heap and Red-Black Tree for efficient ride request management, providing API to interact with Red-Black tree.',
+    stack: ['Java', 'Spring'],
+    github: 'https://github.com/SrikruthReddy/GatorTaxi',
+  },
+  {
+    title: 'Portfolio',
+    description:
+      'Discover my journey through software development and research, showcasing projects on personal website built with React.',
+    stack: ['React', 'JS', 'SCSS'],
+    github: 'https://github.com/SrikruthReddy/my-portfolio',
+  },
+];

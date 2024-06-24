@@ -11,6 +11,7 @@ import {
   faEnvelope,
   faBars,
   faClose,
+  faLaptopCode,
 } from '@fortawesome/free-solid-svg-icons';
 import { Link, NavLink } from 'react-router-dom';
 
@@ -40,6 +41,17 @@ export default function Sidebar() {
           to="/experience"
         >
           <FontAwesomeIcon icon={faSuitcase} color="#4d4d4e"></FontAwesomeIcon>
+        </NavLink>
+        <NavLink
+          exact="true"
+          activeclassname="active"
+          className="projects-link"
+          to="/projects"
+        >
+          <FontAwesomeIcon
+            icon={faLaptopCode}
+            color="#4d4d4e"
+          ></FontAwesomeIcon>
         </NavLink>
         <NavLink
           exact="true"
