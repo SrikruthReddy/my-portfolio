@@ -15,7 +15,7 @@
     "@testing-library/user-event": "^13.5.0",
     "animate.css": "^4.1.1",
     "animejs": "^3.2.2",
-    "framer-motion": "^11.2.10",
+    "framer-motion": "^11.2.11",
     "gsap": "^3.12.5",
     "gsap-trial": "^3.12.5",
     "loaders.css": "^0.1.2",

@@ -19,7 +19,7 @@ const Projects = () => {
   return (
     <>
       <div className="container projects-page">
-        <div className="text-zone1">
+        <div className="text-zone2">
           <h1>
             <AnimatedLetters
               letterClass={letterClass}
@@ -45,13 +45,12 @@ const Projects = () => {
             target="_blank"
             rel="noreferrer"
             href="https://github.com/SrikruthReddy"
-            className="flat-button"
+            className="flat-button1"
           >
             View more
           </a>
         </div>
       </div>
-      <Loader type="pacman" />
     </>
   );
 };
