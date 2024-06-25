@@ -3,10 +3,10 @@ import { Outlet } from 'react-router-dom';
 import './index.scss';
 import Sidebar from '../Sidebar';
 
-const Layout = () => {
+const Layout = ({ location }) => {
   return (
     <div className="App">
-      <Sidebar />
+      <Sidebar location={location} />
       <div className="page">
         <span className="tags top-tags">
           <span className="top-tag-html">&lt;html&gt;</span>

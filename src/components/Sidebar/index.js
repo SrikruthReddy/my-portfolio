@@ -15,7 +15,13 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { Link, NavLink } from 'react-router-dom';
 
-export default function Sidebar() {
+export default function Sidebar({ location }) {
+  const handleClick = (event, path) => {
+    if (location.pathname === path) {
+      event.preventDefault();
+    }
+  };
+
   return (
     <div className="nav-bar">
       <Link className="logo" to="/">
@@ -23,7 +29,12 @@ export default function Sidebar() {
         <img className="sub-logo" src={LogoSubtitle} alt="srikruth" />
       </Link>
       <nav>
-        <NavLink exact="true" activeclassname="active" to="/">
+        <NavLink
+          exact="true"
+          activeclassname="active"
+          to="/"
+          onClick={(event) => handleClick(event, '/')}
+        >
           <FontAwesomeIcon icon={faHome} color="#4d4d4e"></FontAwesomeIcon>
         </NavLink>
         <NavLink
@@ -31,6 +42,7 @@ export default function Sidebar() {
           activeclassname="active"
           className="about-link"
           to="/about"
+          onClick={(event) => handleClick(event, '/about')}
         >
           <FontAwesomeIcon icon={faUser} color="#4d4d4e"></FontAwesomeIcon>
         </NavLink>
@@ -39,6 +51,7 @@ export default function Sidebar() {
           activeclassname="active"
           className="experience-link"
           to="/experience"
+          onClick={(event) => handleClick(event, '/experience')}
         >
           <FontAwesomeIcon icon={faSuitcase} color="#4d4d4e"></FontAwesomeIcon>
         </NavLink>
@@ -47,6 +60,7 @@ export default function Sidebar() {
           activeclassname="active"
           className="projects-link"
           to="/projects"
+          onClick={(event) => handleClick(event, '/projects')}
         >
           <FontAwesomeIcon
             icon={faLaptopCode}
@@ -58,6 +72,7 @@ export default function Sidebar() {
           activeclassname="active"
           className="contact-link"
           to="/contact"
+          onClick={(event) => handleClick(event, '/contact')}
         >
           <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e"></FontAwesomeIcon>
         </NavLink>
