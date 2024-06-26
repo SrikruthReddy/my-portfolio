@@ -3,38 +3,66 @@ import AnimatedLetters from '../AnimatedLetters';
 import { useState, useEffect } from 'react';
 import ExpSidebar from './ExpSidebar';
 import { JOB_DATA, SKILLS_DATA } from '../../data';
-
 import './index.scss';
 
 export default function Experience() {
   const [letterClass, setLetterClass] = useState('text-animate-exp');
   const [job, setJob] = useState('osi');
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
       setLetterClass('text-animate-hover');
     }, 3000);
   }, []);
+
   useEffect(() => {
-    // Initialize TagCanvas
-    if (window.TagCanvas) {
-      try {
-        window.TagCanvas.Start('myCanvas', 'skills-list', {
-          textColour: '#fff',
-          outlineColour: '#0000',
-          reverse: true,
-          depth: 0.8,
-          maxSpeed: 0.05,
-          initial: [0.1, -0.1],
-          wheelZoom: true,
-          noSelect: true,
-          pinchZoom: true,
-        });
-      } catch (e) {
-        console.error('Canvas error:', e);
+    const initTagCanvas = () => {
+      if (window.TagCanvas) {
+        try {
+          window.TagCanvas.Start('myCanvas', 'skills-list', {
+            textColour: '#fff',
+            outlineColour: '#0000',
+            reverse: true,
+            depth: 0.8,
+            maxSpeed: 0.05,
+            initial: [0.1, -0.1],
+            wheelZoom: true,
+            noSelect: true,
+            pinchZoom: true,
+          });
+        } catch (e) {
+          console.error('Canvas error:', e);
+        }
       }
-    }
+    };
+
+    const cleanupTagCanvas = () => {
+      if (window.TagCanvas && window.TagCanvas.Delete) {
+        window.TagCanvas.Delete('myCanvas');
+        const canvas = document.getElementById('myCanvas');
+        if (canvas) {
+          const parent = canvas.parentNode;
+          if (parent) {
+            parent.removeChild(canvas);
+            const newCanvas = document.createElement('canvas');
+            newCanvas.id = 'myCanvas';
+            newCanvas.width = 600;
+            newCanvas.height = 600;
+            parent.appendChild(newCanvas);
+          }
+        }
+      }
+    };
+
+    cleanupTagCanvas();
+    initTagCanvas();
+
+    return () => {
+      cleanupTagCanvas();
+    };
   }, []);
+
   function handleJobClick(newJob) {
     setJob(newJob);
   }
@@ -72,16 +100,13 @@ export default function Experience() {
                   )}
                 </span>
               </h3>
-
               <p>{JOB_DATA[job].dates}</p>
               <ul>
-                {JOB_DATA[job].points.map((point, index) => {
-                  return (
-                    <li key={`${job}-${index}`}>
-                      <p>{point}</p>
-                    </li>
-                  );
-                })}
+                {JOB_DATA[job].points.map((point, index) => (
+                  <li key={`${job}-${index}`}>
+                    <p>{point}</p>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

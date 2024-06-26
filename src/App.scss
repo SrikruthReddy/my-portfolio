@@ -57,3 +57,10 @@ textarea {
   animation: fadeOut 0.7s 0.7s;
   animation-fill-mode: forwards;
 }
+.animated-route {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
