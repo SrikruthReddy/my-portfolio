@@ -49,9 +49,14 @@ const Home = () => {
                 idx={22}
               />
             </h1>
-            <Link to="/resume" className="flat-button">
+            <a
+              href="https://drive.google.com/file/d/1Qk8aO9fcA-sNJJK6GJEYMP1GMYna23tp/view"
+              className="flat-button"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               RESUME
-            </Link>
+            </a>
             <Link to="/contact" className="flat-button">
               CONTACT ME
             </Link>
