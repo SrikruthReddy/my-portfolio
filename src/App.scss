@@ -44,6 +44,20 @@ textarea {
   display: none;
 }
 
+@keyframes showLoader {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  75% {
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
 .loader-active {
   display: block;
   position: absolute;
@@ -54,7 +68,9 @@ textarea {
   bottom: 0;
   width: 50px;
   height: 50px;
-  animation: fadeOut 0.7s 0.7s;
+  animation:
+    showLoader 0.5s forwards,
+    fadeOut 0.7s 0.7s forwards;
   animation-fill-mode: forwards;
 }
 .animated-route {
