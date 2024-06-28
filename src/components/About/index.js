@@ -10,13 +10,27 @@ import Loader from 'react-loaders';
 import AnimatedLetters from '../AnimatedLetters';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDatabase } from '@fortawesome/free-solid-svg-icons';
-
+import { motion } from 'framer-motion';
 import './index.scss';
-
-const About = () => {
+const zoomVariants = {
+  initial: {
+    scale: 0.8,
+    opacity: 0,
+    type: 'spring',
+    mass: 0,
+  },
+  in: {
+    scale: 1,
+    opacity: 1,
+  },
+  out: {
+    scale: 0.8,
+    opacity: 0,
+  },
+};
+const About = ({ location }) => {
   const [letterClass, setLetterClass] = useState('text-animate');
   const [animationClass, setAnimationClass] = useState('');
-
   useEffect(() => {
     setTimeout(() => {
       setLetterClass('text-animate-hover');
@@ -42,18 +56,42 @@ const About = () => {
             />
           </h1>
           <p>
-            I'm an experienced full-stack developer with a strong background in
-            building and optimizing enterprise-level systems. At OSI Systems, I
-            developed RESTful Microservices for the CertScan platform using
-            Java, Spring Boot, Hibernate, and PostgreSQL. I also designed and
-            developed Angular-based widgets that improved operational
-            efficiency.
+            I’m a software developer with a knack for those hard-knock software
+            engineering problems. My journey began with a ‘Hello World’ and a
+            fascination for clever tricks that make computers do amazing things.
           </p>
           <p align="LEFT">
-            I excel in collaborative environments and have hands-on experience
-            with Agile, Git, AWS, and Jenkins. My Master's in Computer Science
-            from the University of Florida and my role as a Graduate Student
-            Assistant have further honed technical and teaching skills.
+            This experience sparked my curiosity, leading me through the
+            fascinating world of algorithms, where I not only learned about them
+            but also mastered their practical use.
+          </p>
+          <p>
+            Now, as a seasoned full-stack developer being equipped with nearly{' '}
+            <span style={{ color: '#FFD700', fontWeight: 600 }}>
+              2&nbsp;years&nbsp;of&nbsp;experience
+            </span>{' '}
+            in crafting robust, scalable products,
+            <br />I also hold a{' '}
+            <span
+              style={{
+                color: '#FFD700',
+                fontStyle: 'italic',
+                fontWeight: 600,
+              }}
+            >
+              Master’s degree in Computer Science
+            </span>{' '}
+            from the{' '}
+            <span
+              style={{
+                color: '#FFD700',
+                fontWeight: 600,
+              }}
+            >
+              University&nbsp;of&nbsp;Florida
+            </span>
+            , which has further honed my technical expertise and analytical
+            skills.
           </p>
           <p>
             Outside of work, I'm a dedicated family person who enjoys sports,
