@@ -16,14 +16,20 @@ import {
 import { Link, NavLink } from 'react-router-dom';
 
 export default function Sidebar({ location }) {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const handleClick = (event, path) => {
     if (location.pathname === path) {
       event.preventDefault();
     }
   };
 
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
-    <div className="nav-bar">
+    <div className={`nav-bar ${menuOpen ? 'open' : ''}`}>
       <Link className="logo" to="/">
         <img src={LogoS} alt="logo" />
         <img className="sub-logo" src={LogoSubtitle} alt="srikruth" />
@@ -35,7 +41,9 @@ export default function Sidebar({ location }) {
           to="/"
           onClick={(event) => handleClick(event, '/')}
         >
-          <FontAwesomeIcon icon={faHome} color="#4d4d4e"></FontAwesomeIcon>
+          <div className="nav-item-container" data-text="Home">
+            <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
+          </div>
         </NavLink>
         <NavLink
           exact="true"
@@ -44,7 +52,9 @@ export default function Sidebar({ location }) {
           to="/about"
           onClick={(event) => handleClick(event, '/about')}
         >
-          <FontAwesomeIcon icon={faUser} color="#4d4d4e"></FontAwesomeIcon>
+          <div className="nav-item-container" data-text="About">
+            <FontAwesomeIcon icon={faUser} color="#4d4d4e" />
+          </div>
         </NavLink>
         <NavLink
           exact="true"
@@ -53,7 +63,9 @@ export default function Sidebar({ location }) {
           to="/experience"
           onClick={(event) => handleClick(event, '/experience')}
         >
-          <FontAwesomeIcon icon={faSuitcase} color="#4d4d4e"></FontAwesomeIcon>
+          <div className="nav-item-container" data-text="Experience">
+            <FontAwesomeIcon icon={faSuitcase} color="#4d4d4e" />
+          </div>
         </NavLink>
         <NavLink
           exact="true"
@@ -62,10 +74,9 @@ export default function Sidebar({ location }) {
           to="/projects"
           onClick={(event) => handleClick(event, '/projects')}
         >
-          <FontAwesomeIcon
-            icon={faLaptopCode}
-            color="#4d4d4e"
-          ></FontAwesomeIcon>
+          <div className="nav-item-container" data-text="Projects">
+            <FontAwesomeIcon icon={faLaptopCode} color="#4d4d4e" />
+          </div>
         </NavLink>
         <NavLink
           exact="true"
@@ -74,9 +85,14 @@ export default function Sidebar({ location }) {
           to="/contact"
           onClick={(event) => handleClick(event, '/contact')}
         >
-          <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e"></FontAwesomeIcon>
+          <div className="nav-item-container" data-text="Contact">
+            <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
+          </div>
         </NavLink>
       </nav>
+      <div className="menu-icon" onClick={toggleMenu}>
+        <FontAwesomeIcon icon={menuOpen ? faClose : faBars} />
+      </div>
       <ul>
         <li>
           <a
@@ -84,10 +100,7 @@ export default function Sidebar({ location }) {
             rel="noreferrer"
             href="https://www.linkedin.com/in/srikruth-reddy-puram/"
           >
-            <FontAwesomeIcon
-              icon={faLinkedin}
-              color="#4d4d4e"
-            ></FontAwesomeIcon>
+            <FontAwesomeIcon icon={faLinkedin} color="#4d4d4e" />
           </a>
         </li>
         <li>
@@ -96,7 +109,7 @@ export default function Sidebar({ location }) {
             rel="noreferrer"
             href="https://github.com/SrikruthReddy"
           >
-            <FontAwesomeIcon icon={faGithub} color="#4d4d4e"></FontAwesomeIcon>
+            <FontAwesomeIcon icon={faGithub} color="#4d4d4e" />
           </a>
         </li>
       </ul>

@@ -5,19 +5,23 @@ export const JOB_DATA = {
     url: 'https://screeningsolution.com/certscan-platform',
     dates: 'Jan 2021 - Jul 2022',
     points: [
-      'Collaborated with a 15-member team to develop and implement RESTful Microservices for CertScan’s backend using Java, Spring Boot, Maven, Hibernate, and PostgreSQL, enhancing performance and reliability',
-      'Designed and implemented live widgets on the CertScan dashboard using Angular, improving operational efficiency by 30%',
-      'Developed a CI/CD pipeline with Jenkins, Docker, Kubernetes, AWS, and Ansible, ensuring consistent and rapid environment provisioning, increasing deployment reliability by 20%',
+      'Collaborated with a scrum team as a full-stack developer to create RESTful Microservices for the CertScan platform using Java, Spring Framework, Angular, PostgreSQL, and Python, significantly enhancing performance and reliability.',
+      'Utilized Object-Oriented Programming (OOP) and SOLID principles and design patterns to architect scalable and maintainable microservices, ensuring robust and efficient code structure.',
+      'Spearheaded implementation of responsive, functional live widgets on CertScan landing dashboard using Angular 12, Typescript, and Tailwind CSS, providing Image Analysts immediate access to critical data and improving operational efficiency by 30%.',
+      "Refactored CertScan's data access layer using Hibernate and JPA, integrating Redis for caching frequently accessed data. This optimization reduced average query response times by 40%, significantly improving the performance under high load conditions.",
+      'Actively contributed to the development and maintenance of robust test suites for an Angular and Java application, employing Jasmine, Karma, Protractor, JUnit, and Mockito to achieve comprehensive code coverage exceeding 90%.',
+      'Engineered a CI/CD pipeline using Maven, Jenkins, and Docker, reducing deployment time by 70% and tripling release frequency, significantly accelerating feature delivery for the CertScan platform.',
     ],
   },
   uf: {
-    title: 'Graduate Student Assistant',
+    title: 'Graduate Student Software Developer',
     company: 'University of Florida',
     url: 'https://www.ufl.edu/',
     dates: 'Dec 2022 - May 2024',
     points: [
-      'Collaborated with Dr. Sartaj Sahni for the course “Advanced Data Structures,” holding office hours, evaluating assignments, and exams. Provided comprehensive feedback to a diverse class of over 330 students.',
+      'Developed a machine learning-powered web application for automated building code compliance review, incorporating a GPT-4 model to analyze regulations, accelerating approvals by 30% and enhancing accuracy.',
       'Developed a React-Node-Express-Mongo website, enhancing NLP annotation. Increased researcher productivity by over 50%, revolutionizing data annotation efficiency in NLP.',
+      'Collaborated with Dr. Sartaj Sahni for the course “Advanced Data Structures,” holding office hours, evaluating assignments, and exams. Provided comprehensive feedback to a diverse class of over 330 students.',
     ],
   },
   drdl: {

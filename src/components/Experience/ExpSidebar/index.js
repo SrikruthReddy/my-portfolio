@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import './index.scss';
 import styled from 'styled-components';
+import { useMediaQuery } from 'react-responsive';
 const jobMapping = {
   osi: 'OSI Systems',
   uf: 'University of Florida',
@@ -27,6 +28,13 @@ const StyledHighlight = styled.div`
   );
   transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition-delay: 0.1s;
+  @media (max-width: 768px) {
+    height: 2px; /* Adjust height for smaller screens if necessary */
+    width: 115px;
+    transform: translateX(
+      calc(${({ activetabid }) => tabMap[activetabid]} * 115px)
+    );
+  }
 `;
 
 export default function ExpSidebar({ onJobClick, currentJob }) {
@@ -36,12 +44,14 @@ export default function ExpSidebar({ onJobClick, currentJob }) {
     setHasClicked(true);
     onJobClick(jobKey);
   };
+  const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
   return (
     <div className="sidebar-container">
       <div className="buttons-container">
         <ul>
           {jobKeys.map((jobKey) => {
-            const jobName = jobMapping[jobKey];
+            const jobName =
+              isMobile && jobKey === 'uf' ? 'UF' : jobMapping[jobKey];
             return (
               <li key={jobKey}>
                 <button

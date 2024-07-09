@@ -4,12 +4,21 @@ import { useState, useEffect } from 'react';
 import ExpSidebar from './ExpSidebar';
 import { JOB_DATA, SKILLS_DATA } from '../../data';
 import './index.scss';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 export default function Experience() {
+  const listItemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
   const [letterClass, setLetterClass] = useState('text-animate-exp');
   const [job, setJob] = useState('osi');
   const [loading, setLoading] = useState(true);
-
+  const [ref, inView] = useInView({
+    threshold: 0, // Trigger animation as soon as any part of the ul is visible
+    triggerOnce: true, // Only trigger the animation once (on initial load)
+  });
   useEffect(() => {
     setTimeout(() => {
       setLetterClass('text-animate-hover');
@@ -101,13 +110,18 @@ export default function Experience() {
                 </span>
               </h3>
               <p>{JOB_DATA[job].dates}</p>
-              <ul>
+              <motion.ul ref={ref}>
                 {JOB_DATA[job].points.map((point, index) => (
-                  <li key={`${job}-${index}`}>
+                  <motion.li
+                    key={`${job}-${index}`}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }} // Animate based on inView
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                  >
                     <p>{point}</p>
-                  </li>
+                  </motion.li>
                 ))}
-              </ul>
+              </motion.ul>
             </div>
           </div>
         </div>

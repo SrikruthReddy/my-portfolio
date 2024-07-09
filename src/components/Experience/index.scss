@@ -94,7 +94,7 @@
             }
           }
         }
-        P {
+        p {
           margin-bottom: 20px;
           color: #ccd6f6;
           font-size: 15px;
@@ -104,31 +104,36 @@
           margin: 0;
           list-style: none;
           font-size: 18px;
+          max-height: 80%; /* Adjust this percentage as needed */
+          overflow-y: scroll;
+          scroll-behavior: smooth;
+
+          &::-webkit-scrollbar {
+            width: 2px;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background-color: #41729f; /* Adjusted color to match background */
+            border-radius: 4px;
+          }
+
+          &::-webkit-scrollbar-track {
+            background-color: #022c43;
+          }
           li {
             position: relative;
             padding-left: 30px;
             margin-bottom: 10px;
+            font-size: 16px;
             &:before {
               content: '▹';
               position: absolute;
               left: 0;
               color: #ffd700;
             }
-
-            &:nth-of-type(1) p {
+            p {
+              animation: none; /* Remove pulse animation */
               font-size: 16px;
-              animation: pulse 1s ease-in-out;
-              animation-delay: 0.15s;
-            }
-            &:nth-of-type(2) p {
-              font-size: 16px;
-              animation: pulse 1s ease-in-out;
-              animation-delay: 0.25s;
-            }
-            &:nth-of-type(3) p {
-              font-size: 16px;
-              animation: pulse 1s ease-in-out;
-              animation-delay: 0.35s;
             }
           }
         }
@@ -137,7 +142,7 @@
   }
   .skills-sphere {
     position: relative;
-    top: 12%;
+    top: 20%;
     left: 7%;
 
     #myCanvasContainer {
@@ -151,6 +156,140 @@
 
     ul {
       display: none;
+    }
+  }
+}
+
+/* Mobile Styles (Up to 768, Primarily for iPhone and iPad) */
+@media screen and (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+    position: relative;
+    padding: 20px 0;
+  }
+  .container.experience-page {
+    left: 2%;
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+  }
+  .container.experience-page .text-zone::before,
+  .container.experience-page .text-zone::after {
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 14px;
+    color: #ffd700;
+    opacity: 0.6;
+    position: absolute;
+    left: -10px;
+    width: 100%;
+    white-space: pre-wrap;
+  }
+  .container.experience-page .text-zone .h1::before,
+  .container.experience-page .text-zone .h1::after {
+    font-family: 'La Belle Aurore', cursive;
+    font-size: 14px;
+    color: #ffd700;
+    opacity: 0.6;
+    position: absolute;
+    left: -10px;
+    width: 100%;
+    white-space: pre-wrap;
+  }
+  .container.experience-page .text-zone .h1::before {
+    content: '<h1';
+    top: -20px;
+  }
+
+  .container.experience-page .text-zone {
+    width: 95% !important;
+    margin: 20px 0;
+    /* Force vertical layout for text-zone children */
+    display: flex;
+    flex-direction: column;
+    flex: 0.63;
+    min-height: 25vh;
+    max-height: 50vh;
+    left: 0px;
+    padding-top: 10px;
+    margin-top: 0px;
+    h1::before,
+    h1::after {
+      font-family: 'La Belle Aurore', cursive;
+      font-size: 14px;
+      color: #ffd700;
+      opacity: 0.6;
+      position: absolute;
+      left: -10px;
+      width: 100%;
+      white-space: pre-wrap;
+    }
+    h1::before {
+      content: '<h1>';
+    }
+    h1::after {
+      content: '</h1>';
+      margin-left: 0px;
+    }
+    h1 {
+      margin-bottom: 10px;
+    }
+    .box {
+      width: 95%; /* Ensure the box takes full width */
+      margin-bottom: 20px;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      .box-content {
+        h3 {
+          font-size: 1.5rem;
+          margin-bottom: 3px;
+        }
+        p {
+          font-size: 0.8rem;
+          margin-top: 3px;
+          margin-bottom: 2px;
+        }
+        ul {
+          overflow-y: scroll;
+          max-height: 34vh;
+          padding-right: 3px;
+          li {
+            font-size: 0.8rem;
+            padding-left: 20px;
+            &::before {
+              content: '▹';
+              position: absolute;
+              left: 0;
+              color: #ffd700;
+              font-size: 1.5rem;
+            }
+            P {
+              font-size: 1.2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  .container.experience-page .skills-sphere {
+    .container.experience-page .skills-sphere::after {
+      content: '   </body>\A</html>';
+      bottom: -20px;
+    }
+    margin-top: 20px;
+    flex: 0.47;
+    display: flex;
+    justify-content: center;
+    #myCanvasContainer {
+      position: relative;
+      top: -5%;
+      width: 60%;
+      height: 15%;
+      left: -5%;
+      bottom: 2%;
     }
   }
 }

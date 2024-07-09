@@ -68,7 +68,7 @@ const About = ({ location }) => {
           <p>
             Now, as a seasoned full-stack developer being equipped with nearly{' '}
             <span style={{ color: '#FFD700', fontWeight: 600 }}>
-              2&nbsp;years&nbsp;of&nbsp;experience
+              3&nbsp;years&nbsp;of&nbsp;experience
             </span>{' '}
             in crafting robust, scalable products,
             <br />I also hold a{' '}
@@ -94,9 +94,9 @@ const About = ({ location }) => {
             skills.
           </p>
           <p>
-            Outside of work, I'm a dedicated family person who enjoys sports,
-            movies, and hitting the gym. I'm eager to bring my skills to
-            innovative projects and grow professionally.
+            Outside of work, I'm someone who enjoys sports, movies, and hitting
+            the gym. I'm eager to bring my skills to innovative projects and
+            grow professionally.
           </p>
         </div>
 

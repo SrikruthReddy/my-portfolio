@@ -50,7 +50,7 @@ const Home = () => {
               />
             </h1>
             <a
-              href="https://drive.google.com/file/d/1Qk8aO9fcA-sNJJK6GJEYMP1GMYna23tp/view"
+              href="https://drive.google.com/file/d/1NqKStKZtvbotr2RFZXUAPXwi673ADtNN/view"
               className="flat-button"
               target="_blank"
               rel="noopener noreferrer"
@@ -61,6 +61,7 @@ const Home = () => {
               CONTACT ME
             </Link>
           </div>
+
           <Logo />
         </div>
       </CSSTransition>

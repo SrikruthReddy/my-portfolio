@@ -5,40 +5,138 @@
   background-color: transparent; /* Background color for sidebar */
   padding: 20px;
   color: #fff;
+}
 
-  .buttons-container {
-    flex: 1; /* Take remaining space */
-    ul {
-      list-style-type: none;
-      margin-top: 0;
-      padding: 0;
-    }
+.sidebar-container .buttons-container {
+  flex: 1; /* Take remaining space */
+}
 
-    button {
-      position: relative;
-      width: 100%;
-      padding: 0 20px 2px;
-      height: 52px;
-      background-color: transparent;
-      color: #9eb3c7;
-      font-family: monospace, 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
-      border: none;
-      border-left: 2px solid #777777;
-      cursor: pointer;
-      text-align: left;
-      white-space: nowrap;
+.sidebar-container .buttons-container ul {
+  list-style-type: none;
+  margin-top: 0;
+  padding: 0;
+}
 
-      &:hover {
-        background-color: #033d54;
-        color: #ffe066;
-      }
-      &.text-highlighted {
-        color: #ffd700;
-      }
-      &.highlighted {
-        color: #ffd700;
-        background-color: #034f6b;
-      }
-    }
+.sidebar-container .buttons-container button {
+  position: relative;
+  width: 100%;
+  padding: 0 20px 2px;
+  height: 52px;
+  background-color: transparent;
+  color: #9eb3c7;
+  font-family: monospace, 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+  border: none;
+  border-left: 2px solid #777777;
+  cursor: pointer;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.sidebar-container .buttons-container button:hover {
+  background-color: #033d54;
+  color: #ffe066;
+}
+
+.sidebar-container .buttons-container button.text-highlighted {
+  color: #ffd700;
+}
+
+.sidebar-container .buttons-container button.highlighted {
+  color: #ffd700;
+  background-color: #034f6b;
+}
+
+/* Mobile Styles (Up to 768px, Primarily for iPhone and iPad) */
+@media (max-width: 768px) {
+  // .container.experience-page {
+  //   padding: 15px;
+  // }
+
+  // .container.experience-page .text-zone {
+  //   width: 100%;
+  //   margin: 20px 0;
+  //   display: block; /* Reset default display property */
+  // }
+
+  // .container.experience-page .text-zone .box .box-content h3 {
+  //   font-size: 1rem;
+  //   margin-bottom: 5px;
+  // }
+
+  // .container.experience-page .text-zone .box .box-content p {
+  //   font-size: 0.8rem;
+  //   margin-bottom: 10px;
+  // }
+
+  // .container.experience-page .text-zone .box .box-content ul li {
+  //   font-size: 0.8rem;
+  //   padding-left: 20px;
+  // }
+
+  // .container.experience-page .text-zone .box .box-content ul li:before {
+  //   font-size: 0.8rem;
+  // }
+
+  .sidebar-container {
+    width: 100%; /* Sidebar takes full width */
+    overflow-x: auto; /* Scrollable if content overflows */
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 0px;
+    padding-top: 7px;
+  }
+  .sidebar-container .buttons-container {
+    height: 35px;
+  }
+  .sidebar-container .buttons-container ul {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+  }
+
+  .sidebar-container .buttons-container li {
+    margin-right: 0px;
+    height: 35px;
+  }
+
+  .sidebar-container .buttons-container button {
+    width: 115px;
+    height: 35px;
+    text-align: center;
+    white-space: normal;
+    padding: 8px 12px; /* Add padding and background */
+    background-color: #033d54; /* Sample background color */
+    color: #fff;
+    border-left: none;
+    border-top: 2px solid #777777;
+  }
+
+  .sidebar-container .buttons-container button:hover {
+    background-color: #034f6b;
+  }
+
+  .sidebar-container .buttons-container button.text-highlighted {
+    color: #ffd700;
+  }
+
+  .sidebar-container .buttons-container button.highlighted {
+    color: #ffd700;
+  }
+
+  // .sidebar-container .styled-highlight {
+  //   bottom: -2px;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 2px;
+  //   border-radius: 4px;
+  //   background: #ffd700;
+  //   z-index: 10;
+  //   transition: left 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  //   transition-delay: 0.1s;
+  // }
+
+  .skills-sphere #myCanvasContainer {
+    height: 180px;
   }
 }

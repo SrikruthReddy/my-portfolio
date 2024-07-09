@@ -72,17 +72,59 @@
     margin-left: 10px; /* Adds space between adjacent flat-buttons */
   }
 }
-.fade-enter {
-  opacity: 0;
-}
-.fade-enter-active {
-  opacity: 1;
-  transition: opacity 500ms ease-in-out;
-}
-.fade-exit {
-  opacity: 1;
-}
-.fade-exit-active {
-  opacity: 0;
-  transition: opacity 500ms ease-in-out;
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+  .home-page {
+    h1 {
+      font-size: 36px;
+      line-height: 40px;
+
+      &:before {
+        font-size: 14px;
+        margin-top: -30px;
+        left: -10px;
+      }
+
+      &:after {
+        font-size: 14px;
+        margin-top: 15px;
+        margin-left: 10px;
+      }
+
+      img {
+        width: 22px;
+      }
+    }
+
+    .text-zone {
+      position: relative;
+      left: 5px;
+      top: 10px;
+      transform: none;
+      width: 90%;
+      max-height: none;
+      margin: 20px auto;
+      padding: 10px;
+      z-index: 3;
+    }
+
+    .flat-button {
+      font-size: 11px;
+      padding: 8px 12px;
+      margin-top: 15px;
+      display: inline-block;
+      float: none;
+      position: relative;
+      top: 20%;
+      z-index: 3000;
+    }
+
+    .flat-button + .flat-button {
+      margin-left: 5px;
+    }
+    .flat-button:nth-child(3) {
+      display: none; /* Hide the second flat-button on mobile */
+    }
+  }
 }

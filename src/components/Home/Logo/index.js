@@ -26,6 +26,7 @@ const Logo = () => {
     });
 
     // Solid logo opacity animation
+
     anime({
       targets: solidLogoRef.current,
       opacity: [0, 1],
